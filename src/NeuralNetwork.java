@@ -18,3 +18,4 @@ public class NeuralNetwork {
         return output;
     }
 }
+
