@@ -1,29 +1,49 @@
+// NeuralNetwork class for neural network. It has hidden neurons and output neuron.
 public class NeuralNetwork {
+    /*
+     * this class declares neurons, initializes them 
+     * with weights and implements forward propagation.
+     */
 
+    // hidden neurons
     Neuron hiddenNeuron1;
     Neuron hiddenNeuron2;
+    // output neuron
     Neuron outputNeuron;
 
-    public NeuralNetwork(int inputSize) {
-        //hiddenNeuron1 = new Neuron(inputSize);
-        //hiddenNeuron2 = new Neuron(inputSize);
-        //outputNeuron = new Neuron(2);
-        
+    // default constructor for setWeights
+    public NeuralNetwork(){
+        // manual weights
         hiddenNeuron1 = new Neuron();
-        hiddenNeuron1.setWeights(new double[]{0.5, 0.3}, 0.2);
-        hiddenNeuron2 = new Neuron();  
-        hiddenNeuron2.setWeights(new double[]{0.3, 0.2}, -0.5);
-
+        hiddenNeuron2 = new Neuron();
+        // takes as much inputs as hidden neurons are there
         outputNeuron = new Neuron();
-        outputNeuron.setWeights(new double[]{0.9, 0.2}, -0.8);
     }
 
+
+    // constructor for neural network
+    public NeuralNetwork(int inputSize) {
+
+        // random weights
+        hiddenNeuron1 = new Neuron(inputSize);
+        hiddenNeuron2 = new Neuron(inputSize);
+
+        outputNeuron = new Neuron(2);
+
+    }
+
+    // forward propagation
     public double forward(double[] input) {
+        // hidden neurons
         double out1 = hiddenNeuron1.activate(input);
         double out2 = hiddenNeuron2.activate(input);
+
         double[] hiddenoutputs = {out1, out2};
+        // output neuron
         double output = outputNeuron.activate(hiddenoutputs);
+
         return output;
+
     }
 }
 
