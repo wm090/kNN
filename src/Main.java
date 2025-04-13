@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
         
         // neural network with random weights
-        NeuralNetwork neuralNetwork = new NeuralNetwork(2);
+        NeuralNetwork neuralNetwork = new NeuralNetwork(3);
 
         // neural network with manual weights.
         NeuralNetwork neuralNetwork2 = new NeuralNetwork();
@@ -14,7 +14,7 @@ public class Main {
         neuralNetwork2.outputNeuron.setWeights(new double[]{0.9, 0.2}, -0.8);
 
         // data
-        double[] data = {1.0 , 0.5};
+        double[] data = {1.0 , 0.5, -0.9};
         
         // prediction - random weights
         double prediction = 0.0;
@@ -23,9 +23,10 @@ public class Main {
 
         System.out.println("--------------------------------------------------");
 
+        double[] data2 = {1.0 , 0.5};
         // prediction2 - manual weights
         double prediction2 = 0.0;
-        prediction2 = neuralNetwork2.forward(data);
+        prediction2 = neuralNetwork2.forward(data2);
         System.out.println("Prediction with manual weights: " + prediction2);
     }
 }
