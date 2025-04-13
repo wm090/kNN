@@ -5,9 +5,17 @@ public class NeuralNetwork {
     Neuron outputNeuron;
 
     public NeuralNetwork(int inputSize) {
-        hiddenNeuron1 = new Neuron(inputSize);
-        hiddenNeuron2 = new Neuron(inputSize);
-        outputNeuron = new Neuron(2);
+        //hiddenNeuron1 = new Neuron(inputSize);
+        //hiddenNeuron2 = new Neuron(inputSize);
+        //outputNeuron = new Neuron(2);
+        
+        hiddenNeuron1 = new Neuron();
+        hiddenNeuron1.setWeights(new double[]{0.5, 0.3}, 0.2);
+        hiddenNeuron2 = new Neuron();  
+        hiddenNeuron2.setWeights(new double[]{0.3, 0.2}, -0.5);
+
+        outputNeuron = new Neuron();
+        outputNeuron.setWeights(new double[]{0.9, 0.2}, -0.8);
     }
 
     public double forward(double[] input) {

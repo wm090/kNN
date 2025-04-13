@@ -3,20 +3,25 @@ import java.util.Arrays;
 class Neuron {
     private double[] weights;
 
-    public Neuron(int inputSize){
+    public Neuron(){
+        
+        // set Neuron(int inputSize)
+        // random weights
         // +1 for bias weight
-        weights = new double[inputSize + 1];
-        for(int i = 0; i < inputSize + 1; i++){
-            weights[i] = Math.random() * 2 - 1;
-        }
+        //weights = new double[inputSize + 1];
+        //for(int i = 0; i < inputSize + 1; i++){
+          //  weights[i] = Math.random() * 2 - 1;
+        //}
     }
 
-    public double setWeights(double[] inputs){
-        
+    public void setWeights(double[] inputs, double biasWeight){
+        weights = new double[inputs.length + 1];
+
         for(int i = 0; i < inputs.length; i++){
             weights[i] = inputs[i];
         }
-        return 0.0;
+        weights[inputs.length] = biasWeight;
+        
     }
 
     public double activate(double[] inputs){
