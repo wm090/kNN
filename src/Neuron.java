@@ -1,10 +1,10 @@
 import java.util.Arrays;
 
-class Neuron {
+public class Neuron {
     private double[] weights;
 
     public Neuron(){
-        
+
         // set Neuron(int inputSize)
         // random weights
         // +1 for bias weight
