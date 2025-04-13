@@ -1,10 +1,6 @@
 // NeuralNetwork class for neural network. It has hidden neurons and output neuron.
 public class NeuralNetwork {
-    /*
-     * this class declares neurons, initializes them 
-     * with weights and implements forward propagation.
-     */
-
+    
     // hidden neurons
     Neuron hiddenNeuron1;
     Neuron hiddenNeuron2;
