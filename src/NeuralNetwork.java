@@ -7,6 +7,7 @@ public class NeuralNetwork {
     // output neuron
     Neuron outputNeuron;
 
+
     // default constructor for setWeights
     public NeuralNetwork(){
         // manual weights
@@ -19,6 +20,8 @@ public class NeuralNetwork {
 
     // constructor for neural network
     public NeuralNetwork(int inputSize) {
+
+       
 
         // random weights
         hiddenNeuron1 = new Neuron(inputSize);
